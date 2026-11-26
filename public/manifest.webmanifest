@@ -1,0 +1,14 @@
+{
+  "name": "Windows Live Messenger Revival",
+  "short_name": "Messenger",
+  "description": "Mensageiro independente inspirado no MSN clássico.",
+  "lang": "pt-BR",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#d8edfc",
+  "theme_color": "#1686cf",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
