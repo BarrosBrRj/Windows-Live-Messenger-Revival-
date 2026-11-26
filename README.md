@@ -18,17 +18,19 @@ Para gerar a versão de produção: `npm run build`. O resultado fica em `dist/`
 ## Configurar o Firebase
 
 1. Crie um projeto em https://console.firebase.google.com/.
-2. Em Authentication, habilite o provedor **E-mail/senha**.
-3. Crie o Firestore Database.
-4. Habilite o Firebase Storage.
-5. Copie as credenciais do app Web para o arquivo `.env`, usando os nomes do `.env.example`.
-6. Publique o conteúdo de `firestore.rules` nas regras do Firestore e `storage.rules` nas regras do Storage.
-7. Na hospedagem, cadastre as mesmas variáveis `VITE_FIREBASE_*` e faça um novo build.
+2. Em Authentication → Sign-in method, habilite **Google** (selecione um e-mail de suporte) e, se desejar manter o cadastro tradicional, também **E-mail/senha**.
+3. Em Authentication → Settings → Authorized domains, adicione `windows-live-messenger-revival.vercel.app` e `windows-live-messenger-revival-git-main-staelbr1975-4059.vercel.app`.
+4. Em Project settings → General, copie a configuração do app Web Firebase para as variáveis `VITE_FIREBASE_*` da Vercel.
+5. Crie o Firestore Database.
+6. Habilite o Firebase Storage.
+7. Publique o conteúdo de `firestore.rules` nas regras do Firestore e `storage.rules` nas regras do Storage.
+8. Na Vercel, cadastre as seis variáveis `VITE_FIREBASE_*` em Project → Settings → Environment Variables e faça redeploy.
 
 Sem as variáveis Firebase, a interface abre, mas login, mensagens e arquivos não funcionam. Nunca coloque credenciais administrativas ou chaves privadas no frontend.
 
 ## Recursos implementados
 
+- Login com Google (OAuth popup, com alternativa por redirecionamento em navegadores que bloqueiam pop-ups).
 - Cadastro e login por e-mail e senha.
 - Perfil, mensagem pessoal e estados disponível/ocupado/ausente/invisível.
 - Lista de contatos com atualização em tempo real.
